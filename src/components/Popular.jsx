@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 function Popular() {
+  const [popular, setPopular] = useState([]);
+
   useEffect(() => {
     //we should use useEffect to Load my API Every (reRenderd Project)
     getPopular();
@@ -12,9 +14,21 @@ function Popular() {
     );
     const data = await api.json();
     // to get information about Our API work or not ==> console.log(data);
-    console.log(data);
+    setPopular(data.recipes);
   };
-  return <div>Popular</div>;
+  return (
+    <div>
+      {popular.map((recipe) => {
+        return (
+          <div key={recipe.id}>
+            {/* key={recipe.id} to solve this problem in Console Warning: Each child in a list should have a unique "key" prop.*/}
+            
+            <p>{recipe.title}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Popular;
