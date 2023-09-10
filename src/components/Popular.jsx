@@ -12,18 +12,23 @@ function Popular() {
   }, []);
 
   const getPopular = async () => {
-    const api = await fetch(
-      "https://api.spoonacular.com/recipes/random?apiKey=42edc8623b08496289581013b1e52bc8&number=9"
-    );
-    const data = await api.json();
-    // to get information about Our API work or not ==> console.log(data);
-    setPopular(data.recipes);
+    const check = localStorage.getItem("popular");
+
+    if (check) {
+      setPopular(JSON.parse(check));
+    } else {
+      const api = await fetch(
+        "https://api.spoonacular.com/recipes/random?apiKey=42edc8623b08496289581013b1e52bc8&number=9"
+      );
+      const data = await api.json();
+      localStorage.setItem("popular", JSON.stringify(data.recipes));
+      setPopular(data.recipes);
+    }
   };
 
   return (
     <div>
       <Wrapper>
-        {/* key={recipe.id} to solve this problem in Console Warning: Each child in a list should have a unique "key" prop.*/}
         <h3>Popular Picks</h3>
         <Splide
           options={{
@@ -36,7 +41,7 @@ function Popular() {
         >
           {popular.map((recipe) => {
             return (
-              <SplideSlide>
+              <SplideSlide key={recipe.id}>
                 <Card key={recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
@@ -93,4 +98,5 @@ const Gradient = styled.div`
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 `;
+
 export default Popular;
