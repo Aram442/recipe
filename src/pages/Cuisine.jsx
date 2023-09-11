@@ -9,7 +9,7 @@ function Cuisine() {
 
   const getCuisine = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=42edc8623b08496289581013b1e52bc8&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=dfb357e5906d4ddfadb7660d15901ad2&cuisine=${name}`
     );
     const recipes = await data.json();
     setCuisine(recipes.results);
