@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 function Veggie() {
   const [veggie, setVeggie] = useState([]);
@@ -18,7 +19,7 @@ function Veggie() {
       setVeggie(JSON.parse(check));
     } else {
       const api = await fetch(
-        "https://api.spoonacular.com/recipes/random?apiKey=cf7e475ba61a4c3b939a5f35f03e8ba6&number=9&tags=vegetarian"
+        "https://api.spoonacular.com/recipes/random?apiKey=2bdedde27a094548beb94205db030047&number=9&tags=vegetarian"
       );
       const data = await api.json();
       localStorage.setItem("veggie", JSON.stringify(data.recipes));
@@ -43,9 +44,11 @@ function Veggie() {
             return (
               <SplideSlide key={recipe.id}>
                 <Card key={recipe.id}>
+                <Link to={"/recipe/" + recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                   <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );
