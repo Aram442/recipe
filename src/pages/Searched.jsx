@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 function Searched() {
@@ -39,6 +39,9 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
+  @media (max-width: 768px) {
+    grid-gap: 0rem;
+  }
 `;
 
 const Card = styled.div`
@@ -53,7 +56,7 @@ const Card = styled.div`
 
   h4 {
     text-align: center;
-    padding: 1rem;
+    padding: 0.7rem;
   }
 `;
 
