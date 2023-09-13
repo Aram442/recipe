@@ -9,7 +9,7 @@ function Searched() {
 
   const getSearched = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=6ee125823ecf49728e9eec1d055c18e3&query=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=78b83051e31949599c1724fd28367658&query=${name}`
     );
     const recipes = await data.json();
     setSearchedRecipes(recipes.results);
