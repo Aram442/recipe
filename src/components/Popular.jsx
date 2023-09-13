@@ -64,12 +64,12 @@ const Wrapper = styled.div`
 `;
 const Card = styled.div`
   min-height: 25rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
   position: relative;
 
   img {
-    border-radius: 2rem;
+    border-radius: 1rem;
     position: absolute;
     left: 0;
     width: 100%;
