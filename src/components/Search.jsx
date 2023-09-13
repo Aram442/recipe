@@ -53,6 +53,9 @@ const FormStyle = styled.form`
   }
 
   @media (max-width: 768px) {
+    body {
+      margin: 0% 10%;
+    }
     width: 100%;
     position: relative;
 

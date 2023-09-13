@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { BrowserRouter, Link } from "react-router-dom";
 import Pages from "./pages/Pages";
 import Category from "./components/Category";
@@ -21,13 +21,6 @@ function App() {
   );
 }
 
-const Logo = styled(Link)`
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-family: "Lobster Two", cursive;
-`;
-
 const Nav = styled.div`
   padding: 2rem 0rem;
   display: flex;
@@ -35,6 +28,30 @@ const Nav = styled.div`
   align-items: center;
   svg {
     font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    svg {
+      font-size: 1.8rem;
+    }
+  }
+`;
+
+const Logo = styled(Link)`
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Lobster Two", cursive;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
   }
 `;
 
