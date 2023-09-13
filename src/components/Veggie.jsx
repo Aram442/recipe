@@ -106,34 +106,14 @@ const Card = styled.div`
   @media (max-width: 768px) {
     min-height: 15rem;
     border-radius: 0.5rem;
-    overflow: hidden;
-    position: relative;
     margin: 0.2rem;
 
     img {
       border-radius: 0.5rem;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     p {
-      position: absolute;
-      z-index: 10;
-      left: 50%;
-      bottom: 0;
-      transform: translate(-50%, 0%);
-      color: white;
-      width: 100%;
-      text-align: center;
-      font-weight: 300;
       font-size: 0.7rem;
-      height: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 `;

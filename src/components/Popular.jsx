@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ function Popular() {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            // gap: "5rem",
           }}
         >
           {popular.map((recipe) => {
@@ -61,12 +61,20 @@ function Popular() {
 
 const Wrapper = styled.div`
   margain: 4rem 0rem;
+  @media (max-width: 768px) {
+    margain: 1rem 0rem;
+    h3 {
+      font-size: 1rem;
+      margin: 0rem 0rem 0.5rem 0rem;
+    }
+  }
 `;
 const Card = styled.div`
   min-height: 25rem;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
+  margin: 1rem;
 
   img {
     border-radius: 1rem;
@@ -91,6 +99,18 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 768px) {
+    min-height: 15rem;
+    border-radius: 0.4rem;
+    margin: 0.2rem;
+
+    img {
+      border-radius: 0.4rem;
+    }
+    p {
+      font-size: 0.7rem;
+    }
   }
 `;
 
