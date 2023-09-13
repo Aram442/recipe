@@ -10,7 +10,7 @@ import Recipe from "./Recipe";
 function Pages() {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         {" "}
         {/* Corrected prop name */}
