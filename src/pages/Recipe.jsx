@@ -48,40 +48,43 @@ function Recipe() {
             ></h3>
           </div>
         )}
-        {activeTab === "ingredients" &&
-          (
-         <ul>
-          {detailData.extendedIngredients.map((ingredient) => (
-            <li key={ingredient.id}>{ingredient.original}</li>
-          ))}
-        </ul> 
-          )}
+        {activeTab === "ingredients" && (
+          <ul>
+            {detailData.extendedIngredients.map((ingredient) => (
+              <li key={ingredient.id}>{ingredient.original}</li>
+            ))}
+          </ul>
+        )}
       </Info>
     </DetailWrapper>
   );
 }
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  // margin-bottom: 5rem;
   display: flex;
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
   }
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+    text-align: justify;
   }
   li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
   }
   ul {
-    margin-top: 2rem;
+    margin: 1.3rem 0rem;
   }
 `;
 
 const Button = styled.button`
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   color: #313131;
   background-color: white;
   border: 2px solid black;
@@ -90,7 +93,7 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  margin-left: 10rem;
+  margin-left: 2rem;
 `;
 
 export default Recipe;
