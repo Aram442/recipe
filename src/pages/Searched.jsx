@@ -56,7 +56,11 @@ const Card = styled.div`
 
   h4 {
     text-align: center;
-    padding: 0.7rem;
+    padding: 1rem;
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
   }
 `;
 
