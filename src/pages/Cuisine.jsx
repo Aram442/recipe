@@ -63,10 +63,13 @@ const Card = styled.div`
   h4 {
     text-align: center;
     padding: 1rem;
+  }
 
-    @media (max-width: 768px) {
-      padding: 0.5rem;
-      font-size: 0.9rem;
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    img {
+      border-radius: 0.5rem;
     }
   }
 `;
