@@ -9,7 +9,7 @@ function Recipe() {
 
   const fetchDetails = async () => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=78b83051e31949599c1724fd28367658`
+      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=cd2b471e879a40e1adc2bd70e1569645`
     );
     const detailData = await data.json();
     setDetailData(detailData);
@@ -23,23 +23,25 @@ function Recipe() {
 
   return (
     <DetailWrapper>
-      <div>
+      <div className="h2-img">
         <h2>{detailData.title}</h2>
         <img src={detailData.image} alt={detailData.title} />
       </div>
       <Info>
-        <Button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}
-        >
-          Instructions
-        </Button>
-        <Button
-          className={activeTab === "ingredients" ? "active" : ""}
-          onClick={() => setActiveTab("ingredients")}
-        >
-          Ingredients
-        </Button>
+        <div className="button">
+          <Button
+            className={activeTab === "instructions" ? "active" : ""}
+            onClick={() => setActiveTab("instructions")}
+          >
+            Instructions
+          </Button>
+          <Button
+            className={activeTab === "ingredients" ? "active" : ""}
+            onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </Button>
+        </div>
         {activeTab === "instructions" && (
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: detailData.summary }}></h3>
@@ -81,6 +83,41 @@ const DetailWrapper = styled.div`
   ul {
     margin: 1.3rem 0rem;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 0rem;
+    flex-direction: column;
+
+    .h2-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .button {
+    }
+    img {
+      width: 100%;
+      min-height: 15rem;
+      border-radius: 0.5rem;
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      align-items: center;
+    }
+    h3 {
+      font-size: 0.7rem;
+      text-align: justify;
+      margin: 1rem 0rem;
+    }
+    li {
+      font-size: 0.9rem;
+      line-height: 2rem;
+    }
+    ul {
+      margin: 1.3rem 0rem;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -90,10 +127,25 @@ const Button = styled.button`
   border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    border: 1.6px solid black;
+    margin-right: 0.3rem;
+    font-weight: 300;
+  }
 `;
 
 const Info = styled.div`
   margin-left: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 1rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default Recipe;
