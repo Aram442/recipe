@@ -9,7 +9,7 @@ function Recipe() {
 
   const fetchDetails = async () => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=cd2b471e879a40e1adc2bd70e1569645`
+      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=12f7642bede54bd2a2e850e05ff507da`
     );
     const detailData = await data.json();
     setDetailData(detailData);
@@ -109,10 +109,11 @@ const DetailWrapper = styled.div`
       font-size: 0.7rem;
       text-align: justify;
       margin: 1rem 0rem;
+      line-height: 1.5rem;
     }
     li {
-      font-size: 0.9rem;
-      line-height: 2rem;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
     }
     ul {
       margin: 1.3rem 0rem;

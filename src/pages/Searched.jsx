@@ -9,7 +9,7 @@ function Searched() {
 
   const getSearched = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=cd2b471e879a40e1adc2bd70e1569645&query=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=12f7642bede54bd2a2e850e05ff507da&query=${name}`
     );
     const recipes = await data.json();
     setSearchedRecipes(recipes.results);
@@ -57,9 +57,18 @@ const Card = styled.div`
   h4 {
     text-align: center;
     padding: 1rem;
-    @media (max-width: 768px) {
-      padding: 0.5rem;
-      font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    h4 {
+      text-align: center;
+      padding: 1rem 1rem 0rem 1rem;
     }
   }
 `;
