@@ -63,7 +63,7 @@ const FormStyle = styled.form`
       font-size: 0.8rem;
       padding: 0.5rem 3rem;
       border-radius: 0.3rem;
-      touchaction: "manipulation"; // Disable zoom on touch devices
+      touchaction: "none"; // Disable zoom on touch devices
     }
     svg {
       font-size: 0.8rem;
