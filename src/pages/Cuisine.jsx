@@ -47,6 +47,9 @@ const Grid = styled(motion.div)`
   grid-gap: 3rem;
   @media (max-width: 768px) {
     grid-gap: 0rem;
+    display: flex;
+    flex-direction: column;
+   
   }
 `;
 
