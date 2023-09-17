@@ -9,7 +9,7 @@ function Cuisine() {
 
   const getCuisine = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=12537c4597f048f7a4a998ff11ca5ade&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=59eb069a7440405a9308c237dbb12698&cuisine=${name}`
     );
     const recipes = await data.json();
     setCuisine(recipes.results);
@@ -49,7 +49,6 @@ const Grid = styled(motion.div)`
     grid-gap: 0rem;
     display: flex;
     flex-direction: column;
-   
   }
 `;
 
