@@ -12,8 +12,6 @@ function Pages() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        {" "}
-        {/* Corrected prop name */}
         <Route path="/" element={<Home />} />
         <Route path="/cuisine/:type" element={<Cuisine />} />
         <Route path="/searched/:search" element={<Searched />} />
@@ -24,3 +22,8 @@ function Pages() {
 }
 
 export default Pages;
+
+
+
+
+

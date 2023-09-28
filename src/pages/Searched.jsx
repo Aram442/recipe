@@ -76,3 +76,5 @@ const Card = styled.div`
 `;
 
 export default Searched;
+
+
